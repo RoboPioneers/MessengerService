@@ -18,7 +18,7 @@ class RouterImplementer : Router.RouterBase
             ClockFrequency = 5000000,
             Mode = SpiMode.Mode0
         };
-        // _device = SpiDevice.Create(settings);
+        _device = SpiDevice.Create(settings);
         
     }
 
@@ -33,7 +33,7 @@ class RouterImplementer : Router.RouterBase
             package.WriteByte(0);
             package.WriteByte(0xED);
             
-            // _device.Write(package.ToArray());
+            _device.Write(package.ToArray());
             
             return new WriteResponse
             {
@@ -48,7 +48,8 @@ class RouterImplementer : Router.RouterBase
         {
             var data = new byte[request.Length];
 
-            // _device.Read(data);
+            // 注意，SPI会读满字节后再返回
+            _device.Read(data);
 
             return new ReadResponse
             {

@@ -1,0 +1,44 @@
+﻿syntax = "proto3";
+
+package Messenger;
+
+message Message {
+  sint32 ID = 1;
+  string Protocol = 2;
+  bytes Content = 3;
+}
+
+message SensorRequest {
+  string Type = 1;
+  sint32 ID = 2;
+}
+
+message SensorResponse {
+  Message Data = 1;
+}
+
+message Vector3d {
+  double X = 1;
+  double Y = 2;
+  double Z = 3;
+}
+
+message Vector3i {
+  sint32 X = 1;
+  sint32 Y = 2;
+  sint32 Z = 3;
+}
+
+message Vector4d {
+  double X = 1;
+  double Y = 2;
+  double Z = 3;
+  double W = 4;
+}
+
+message Vector4i {
+  sint32 X = 1;
+  sint32 Y = 2;
+  sint32 Z = 3;
+  sint32 W = 4;
+}

@@ -8,27 +8,32 @@ message Message {
   bytes Content = 3;
 }
 
+// SNS_REQ
 message SensorRequest {
   string Type = 1;
   sint32 ID = 2;
 }
 
+// SNS_RES
 message SensorResponse {
   Message Data = 1;
 }
 
+// VEC3D
 message Vector3d {
   double X = 1;
   double Y = 2;
   double Z = 3;
 }
 
+// VEC3I
 message Vector3i {
   sint32 X = 1;
   sint32 Y = 2;
   sint32 Z = 3;
 }
 
+// VEC4D
 message Vector4d {
   double X = 1;
   double Y = 2;
@@ -36,6 +41,7 @@ message Vector4d {
   double W = 4;
 }
 
+// VEC4I
 message Vector4i {
   sint32 X = 1;
   sint32 Y = 2;
